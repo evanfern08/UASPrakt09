@@ -1,15 +1,15 @@
 public class BinarySearchTreeFilm09 {
     NodeFilm09 root;
 
-    public BinarySearchTreeFilm09() {
+    public BinarySearchTreeFilm09() {       // Constructor untuk menginisialisasi root BST
         root = null;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() {              // Mengecek apakah tree kosong
         return root == null;
     }
 
-    public void add(Film09 data) {
+    public void add(Film09 data) {          // Menambahkan data film ke BST berdasarkan kode film
         NodeFilm09 newNode = new NodeFilm09(data);
 
         if (isEmpty()) {
@@ -35,7 +35,7 @@ public class BinarySearchTreeFilm09 {
             parent.right = newNode;
         }
     }
-    public boolean find(String kodeFilm) {
+    public boolean find(String kodeFilm) {  // Mencari kode film dalam BST
         NodeFilm09 current =  root;
         
         while (current != null) {
@@ -52,7 +52,7 @@ public class BinarySearchTreeFilm09 {
         return false;
     }
 
-    public void traverseInOrder(NodeFilm09 node) {
+    public void traverseInOrder(NodeFilm09 node) {  // Traversal in-order untuk menampilkan data film secara terurut berdasarkan kode film
         if (node != null) {
             traverseInOrder(node.left);
             node.data.tampilInformasi();
@@ -60,7 +60,7 @@ public class BinarySearchTreeFilm09 {
         }
     }
 
-    public void traversePreOrder(NodeFilm09 node) {
+    public void traversePreOrder(NodeFilm09 node) {    // Traversal pre-order untuk menampilkan data film sesuai urutan penambahan
         if (node != null) {
             node.data.tampilInformasi();
             traversePreOrder(node.left);
@@ -68,7 +68,7 @@ public class BinarySearchTreeFilm09 {
         }
     }
     
-    public int hitungJumlahFilm(NodeFilm09 node) {
+    public int hitungJumlahFilm(NodeFilm09 node) {  // Menghitung jumlah film dalam BST dengan rekursi
         if (node == null) {
             return 0;
         }
